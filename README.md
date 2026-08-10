@@ -1,1 +1,2 @@
 # LojaVirtual
+loja feita recentemente

@@ -1,0 +1,40 @@
+.rodape-container {
+  background-color: #111;
+  color: #ccc;
+  padding: 40px 20px 20px 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+.rodape-conteudo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.rodape-secao {
+  margin-bottom: 20px;
+  min-width: 200px;
+}
+.rodape-secao h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+.rodape-secao ul {
+  list-style: none;
+  padding: 0;
+}
+.rodape-secao ul li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.rodape-secao ul li:hover {
+  color: white;
+}
+.rodape-direitos {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 0.85rem;
+}

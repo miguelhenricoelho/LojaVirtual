@@ -1,0 +1,83 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ff4500;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.navbar-logo span {
+  color: #ff4500;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ff4500;
+}
+
+.navbar-acoes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-navbar-login {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #ff4500;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-navbar-login:hover {
+  background-color: #ff4500;
+}
+
+.carrinho-icone {
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.carrinho-contador {
+  background-color: #ff4500;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}

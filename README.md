@@ -1,2 +1,0 @@
-# LojaVirtual
-loja feita recentemente

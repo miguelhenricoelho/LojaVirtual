@@ -1,34 +1,72 @@
-import React from 'react';
-import './Home.css';
-// IMPORTAÇÃO CORRIGIDA: Entra na pasta vizinha "introducao" para puxar o banner
-import Introducao from '../introducao/Introducao';
+import { Link } from "react-router";
+import Introducao from "../introducao/Introducao";
+import ProdutoCard from "../produtoCard/produtoCard";
+import produtos from "../../data/produtos";
+import "./Home.css";
+
+const categorias = [
+  { nome: "Futebol", imagem: "https://loremflickr.com/400/500/soccer,field" },
+  { nome: "Corrida", imagem: "https://loremflickr.com/400/500/running,track" },
+  { nome: "Basquete", imagem: "https://loremflickr.com/400/500/basketball,court" },
+  { nome: "Fitness", imagem: "https://loremflickr.com/400/500/gym,weights" },
+];
 
 function Home() {
-  // Catálogo criativo de destaques com imagens reais da internet
-  const produtos = [
-    { id: 1, nome: "Tênis Ultra Boost Run", preco: "R$ 599,90", img: "https://unsplash.com" },
-    { id: 2, nome: "Camiseta Dry-Fit High Performance", preco: "R$ 119,90", img: "https://unsplash.com" },
-    { id: 3, nome: "Shorts de Compressão Pro", preco: "R$ 89,90", img: "https://unsplash.com" },
-    { id: 4, nome: "Garrafa Térmica Inox Hidro", preco: "R$ 149,90", img: "https://unsplash.com" }
-  ];
+  const destaques = produtos.slice(0, 4);
 
   return (
-    <div className="home-container">
+    <>
       <Introducao />
-      <div className="vitrine-secao">
-        <h2>Destaques da Semana</h2>
-        <div className="produtos-grid">
-          {produtos.map(prod => (
-            <div key={prod.id} className="produto-card">
-              <img src={prod.img} alt={prod.nome} />
-              <h3>{prod.nome}</h3>
-              <p className="preco">{prod.preco}</p>
-              <button className="btn-comprar">Comprar</button>
-            </div>
+
+      <section className="home-categorias container">
+        <h2 className="home-secao-titulo">Por categoria</h2>
+        <div className="categorias-grid">
+          {categorias.map((cat) => (
+            <Link to="/produtos" key={cat.nome} className="categoria-card corte">
+              <img src={cat.imagem} alt={cat.nome} />
+              <span>{cat.nome}</span>
+            </Link>
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="home-destaques container">
+        <div className="home-secao-header">
+          <h2 className="home-secao-titulo">Mais vendidos</h2>
+          <Link to="/produtos" className="home-ver-todos">Ver todos →</Link>
+        </div>
+        <div className="produtos-grid">
+          {destaques.map((produto) => (
+            <ProdutoCard key={produto.id} produto={produto} />
+          ))}
+        </div>
+      </section>
+
+      <section className="home-beneficios">
+        <div className="container beneficios-grid">
+          <div className="beneficio">
+            <span>🚚</span>
+            <h4>Frete rápido</h4>
+            <p>Entrega em até 3 dias úteis para todo o Brasil.</p>
+          </div>
+          <div className="beneficio">
+            <span>🔄</span>
+            <h4>Troca fácil</h4>
+            <p>30 dias para trocar ou devolver sem burocracia.</p>
+          </div>
+          <div className="beneficio">
+            <span>🔒</span>
+            <h4>Compra segura</h4>
+            <p>Pagamento protegido em todas as etapas.</p>
+          </div>
+          <div className="beneficio">
+            <span>🏆</span>
+            <h4>Qualidade pro</h4>
+            <p>Produtos usados por atletas profissionais.</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

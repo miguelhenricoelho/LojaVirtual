@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-
+import { CarrinhoProvider } from "./context/CarrinhoContext";
 
 import Navbar from "./components/navbar/Navbar";
 import Rodape from "./components/rodape/Rodape";
@@ -7,26 +7,29 @@ import Home from "./components/home/Home";
 import Produtos from "./components/produtos/Produtos";
 import Sobre from "./components/sobre/Sobre";
 import Login from "./components/login/Login";
+import Carrinho from "./components/carrinho/Carrinho";
+import NaoEncontrado from "./components/naoencontrado/NaoEncontrado";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="app-layout" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Barra de navegação fixa no topo */}
-      <Navbar /> 
-      
-      {/* Área dinâmica que renderiza as páginas da loja */}
-      <div style={{ flex: 1 }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/produtos" element={<Produtos />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+    <CarrinhoProvider>
+      <div className="app">
+        <Navbar />
+        <main className="app-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/produtos" element={<Produtos />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/carrinho" element={<Carrinho />} />
+            <Route path="*" element={<NaoEncontrado />} />
+          </Routes>
+        </main>
+        <Rodape />
       </div>
-      
-      {/* Rodapé fixado na parte inferior */}
-      <Rodape />
-    </div>
+    </CarrinhoProvider>
   );
 }
 

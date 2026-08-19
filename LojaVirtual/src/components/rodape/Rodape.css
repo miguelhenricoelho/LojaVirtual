@@ -1,40 +1,107 @@
-.rodape-container {
-  background-color: #111;
-  color: #ccc;
-  padding: 40px 20px 20px 20px;
-  font-family: Arial, sans-serif;
-  margin-top: 50px;
+.rodape {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding-top: 56px;
 }
-.rodape-conteudo {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+
+.rodape-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+  gap: 32px;
+  padding-bottom: 40px;
 }
-.rodape-secao {
-  margin-bottom: 20px;
-  min-width: 200px;
+
+.rodape-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
 }
-.rodape-secao h3 {
-  color: white;
-  margin-bottom: 15px;
+
+.rodape-logo span {
+  color: var(--gold);
 }
-.rodape-secao ul {
-  list-style: none;
-  padding: 0;
-}
-.rodape-secao ul li {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-.rodape-secao ul li:hover {
-  color: white;
-}
-.rodape-direitos {
-  text-align: center;
-  border-top: 1px solid #333;
-  margin-top: 30px;
-  padding-top: 20px;
+
+.rodape-marca p {
+  color: var(--text-soft);
   font-size: 0.85rem;
+  margin-top: 12px;
+  max-width: 260px;
+}
+
+.rodape-coluna h4 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: none;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.rodape-coluna a {
+  display: block;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  transition: color .15s ease;
+}
+
+.rodape-coluna a:hover {
+  color: var(--text);
+}
+
+.rodape-coluna p {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.rodape-newsletter {
+  display: flex;
+  gap: 8px;
+}
+
+.rodape-newsletter input {
+  flex: 1;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.rodape-newsletter .btn {
+  padding: 10px 16px;
+  font-size: 0.75rem;
+}
+
+.rodape-base {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.rodape-social {
+  display: flex;
+  gap: 14px;
+}
+
+.rodape-social a {
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 800px) {
+  .rodape-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rodape-base {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 }

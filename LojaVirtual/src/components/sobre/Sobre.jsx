@@ -1,44 +1,51 @@
-import React from 'react';
-import './Sobre.css';
+import "./Sobre.css";
 
 function Sobre() {
   return (
-    <div className="sobre-container">
-      <div className="sobre-hero">
-        <h1>Nossa História</h1>
-        <p>Nascidos para impulsionar atletas e entusiastas do esporte.</p>
-      </div>
-      
+    <section className="sobre container">
+      <header className="sobre-header">
+        <span className="eyebrow">Nossa história</span>
+        <h1>Feita por quem <span>joga</span></h1>
+      </header>
+
       <div className="sobre-conteudo">
+        <img
+          src="https://loremflickr.com/700/500/athletes,training"
+          alt="Time de atletas treinando"
+          className="sobre-imagem corte"
+        />
         <div className="sobre-texto">
-          <h2>Quem Somos</h2>
           <p>
-            Fundada em 2026, a <strong>SPORTZONE</strong> nasceu com o objetivo claro de democratizar o acesso a materiais esportivos de alta performance. Acreditamos que o esporte transforma vidas.
+            A SportZone nasceu em 2019 na quadra de um campus universitário, entre treinos
+            e a dificuldade de achar equipamento bom sem pagar caro. Hoje reunimos marcas
+            confiáveis e produtos testados em campo, quadra e pista pra equipar quem treina
+            de verdade.
           </p>
           <p>
-            Selecionamos a dedo cada tênis, peça de vestuário e acessório em nosso catálogo para garantir que você tenha a melhor experiência possível em seus treinos.
+            Trabalhamos direto com atletas locais pra validar cada item do catálogo antes
+            de colocar à venda — se não aguenta o treino, não entra na loja.
           </p>
-        </div>
-        <div className="sobre-imagem">
-          <img src="https://unsplash.com" alt="Atletas correndo" />
         </div>
       </div>
 
-      <div className="valores-grid">
-        <div className="valor-card">
-          <h3>Qualidade</h3>
-          <p>Apenas produtos testados e aprovados pelas maiores marcas globais.</p>
+      <div className="sobre-valores">
+        <div className="valor">
+          <span>⚡</span>
+          <h4>Performance real</h4>
+          <p>Testamos tudo antes de vender.</p>
         </div>
-        <div className="valor-card">
-          <h3>Inovação</h3>
-          <p>Tecnologias de absorção de impacto e materiais sustentáveis.</p>
+        <div className="valor">
+          <span>💰</span>
+          <h4>Preço justo</h4>
+          <p>Sem intermediário inflando o valor.</p>
         </div>
-        <div className="valor-card">
-          <h3>Foco no Cliente</h3>
-          <p>Suporte humanizado e envio expresso para todo o Brasil.</p>
+        <div className="valor">
+          <span>🤝</span>
+          <h4>Comunidade</h4>
+          <p>Apoiamos atletas e times amadores.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

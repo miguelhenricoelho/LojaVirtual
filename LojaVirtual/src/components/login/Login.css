@@ -1,62 +1,71 @@
-.login-container {
+.login-pagina {
+  min-height: calc(100vh - var(--navbar-h));
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
+  justify-content: center;
+  padding: 40px 24px;
 }
-.login-box {
-  background: white;
+
+.login-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
   padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 400px;
 }
-.login-box h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #333;
-}
-.input-group {
-  margin-bottom: 15px;
-}
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #666;
-  font-size: 0.9rem;
-}
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.btn-enviar {
-  width: 100%;
-  padding: 12px;
-  background-color: #111;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-}
-.btn-enviar:hover {
-  background-color: #333;
-}
-.alternar-autenticacao {
-  text-align: center;
-  margin-top: 20px;
-  color: #0066cc;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-.alternar-autenticacao:hover {
-  text-decoration: underline;
+
+.login-card h1 {
+  font-size: 1.8rem;
+  margin: 8px 0 24px;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-campo span {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.login-campo input {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.login-campo input:focus {
+  outline: none;
+  border-color: var(--cobalt);
+}
+
+.login-btn {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.login-alternar {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.login-alternar button {
+  color: var(--cobalt);
+  font-weight: 700;
+}

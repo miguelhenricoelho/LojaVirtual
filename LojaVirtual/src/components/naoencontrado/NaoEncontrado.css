@@ -1,0 +1,26 @@
+.nf {
+  min-height: calc(100vh - var(--navbar-h));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.nf-code {
+  font-family: var(--font-mono);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--cobalt);
+}
+
+.nf-title {
+  font-size: 2.2rem;
+}
+
+.nf-text {
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}

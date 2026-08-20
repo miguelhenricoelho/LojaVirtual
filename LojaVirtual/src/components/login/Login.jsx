@@ -1,39 +1,52 @@
-import React, { useState } from 'react';
-import './Login.css';
+import { useState } from "react";
+import "./Login.css";
 
 function Login() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [modoCadastro, setModoCadastro] = useState(false);
+
+  function handleSubmit(evento) {
+    evento.preventDefault();
+    // integração com backend de autenticação entra aqui depois
+  }
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>{isLogin ? 'Entrar na Loja' : 'Criar Conta Esportiva'}</h2>
-        <form onSubmit={(e) => e.preventDefault()}>
-          {!isLogin && (
-            <div className="input-group">
-              <label>Nome Completo</label>
-              <input type="text" placeholder="Seu nome" required />
-            </div>
+    <section className="login-pagina">
+      <div className="login-card corte">
+        <span className="eyebrow">{modoCadastro ? "Novo por aqui" : "Bem-vindo de volta"}</span>
+        <h1>{modoCadastro ? "Criar conta" : "Entrar"}</h1>
+
+        <form className="login-form" onSubmit={handleSubmit}>
+          {modoCadastro && (
+            <label className="login-campo">
+              <span>Nome completo</span>
+              <input type="text" name="nome" placeholder="Seu nome" required />
+            </label>
           )}
-          <div className="input-group">
-            <label>E-mail</label>
-            <input type="email" placeholder="seu-email@email.com" required />
-          </div>
-          <div className="input-group">
-            <label>Senha</label>
-            <input type="password" placeholder="Sua senha" required />
-          </div>
-          <button type="submit" className="btn-enviar">
-            {isLogin ? 'Acessar Conta' : 'Cadastrar'}
+
+          <label className="login-campo">
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="voce@email.com" required />
+          </label>
+
+          <label className="login-campo">
+            <span>Senha</span>
+            <input type="password" name="senha" placeholder="••••••••" required />
+          </label>
+
+          <button type="submit" className="btn btn-primary login-btn">
+            {modoCadastro ? "Criar conta" : "Entrar"}
           </button>
         </form>
-        <p className="alternar-autenticacao" onClick={() => setIsLogin(!isLogin)}>
-          {isLogin ? 'Não tem conta? Cadastre-se aqui' : 'Já tem conta? Faça o Login'}
+
+        <p className="login-alternar">
+          {modoCadastro ? "Já tem conta?" : "Ainda não tem conta?"}{" "}
+          <button type="button" onClick={() => setModoCadastro(!modoCadastro)}>
+            {modoCadastro ? "Entrar" : "Cadastre-se"}
+          </button>
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default Login;
-

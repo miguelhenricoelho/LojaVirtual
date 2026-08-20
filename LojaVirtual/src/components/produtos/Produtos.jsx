@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import ProdutoCard from "../produtoCard/produtoCard";
+import ProdutoCard from "../produtoCard/ProdutoCard";
 import produtos from "../../data/produtos";
 import "./Produtos.css";
 

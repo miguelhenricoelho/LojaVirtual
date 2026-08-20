@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import Introducao from "../introducao/Introducao";
-import ProdutoCard from "../produtoCard/produtoCard";
+import ProdutoCard from "../produtoCard/ProdutoCard";
 import produtos from "../../data/produtos";
 import "./Home.css";
 
@@ -47,27 +47,4 @@ function Home() {
           <div className="beneficio">
             <span>🚚</span>
             <h4>Frete rápido</h4>
-            <p>Entrega em até 3 dias úteis para todo o Brasil.</p>
-          </div>
-          <div className="beneficio">
-            <span>🔄</span>
-            <h4>Troca fácil</h4>
-            <p>30 dias para trocar ou devolver sem burocracia.</p>
-          </div>
-          <div className="beneficio">
-            <span>🔒</span>
-            <h4>Compra segura</h4>
-            <p>Pagamento protegido em todas as etapas.</p>
-          </div>
-          <div className="beneficio">
-            <span>🏆</span>
-            <h4>Qualidade pro</h4>
-            <p>Produtos usados por atletas profissionais.</p>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
-export default Home;
+            <p>Entrega em até 3 dias úteis para todo o
